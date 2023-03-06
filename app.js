@@ -9,7 +9,7 @@ const flash = require('connect-flash');
 const errorController = require('./controllers/error');
 const mongoConnect = require('./util/database').mongoConnect;
 const multer = require('multer');
-
+require('dotenv').config();
 const { csrfSync } = require("csrf-sync");
 const {
   invalidCsrfTokenError, // This is just for convenience if you plan on making your own middleware.
@@ -29,7 +29,7 @@ const {
 
 const app = express();
 const store = new MongoDbSession({
-  uri: 'mongodb+srv://dax523:7355608@cluster0.poi9kq7.mongodb.net/test',
+  uri: process.env.DATABASE_KEY,
   collection: 'sessions'
 }
 );

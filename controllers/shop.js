@@ -3,7 +3,8 @@ const Order = require('../models/order');
 const fs = require('fs');
 const path = require('path');
 const PDFdoc = require('pdfkit');
-const stripe = require('stripe')('sk_test_51MhRBjSEIfzN3Yx4Ph0CWCNUqO0c50SOyQhFi8nNaI8dw4vPknTTUyrrPpKNHGohvKVsVBBw24rg04MiuOc8kCNp00jaY9ObbK');
+require('dotenv').config();
+const stripe = require('stripe')(process.env.STRIPE_KEY_2);
 const ITEMS_PER_PAGE = 2;
 
 const errorOccurred = err => {

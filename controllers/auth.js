@@ -7,7 +7,7 @@ const { validationResult } = require('express-validator');
 
 const transporter = nodemailer.createTransport(
   new Transport({
-    apiKey: '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'
+    apiKey: process.env.API_KEY
   })
 )
 

@@ -27,7 +27,8 @@
                         </button>
                         <script src="https://js.stripe.com/v3/"></script>
                         <script>
-                            var stripe = Stripe('pk_test_51MhRBjSEIfzN3Yx4xFLWOyVUtxU7sthQQrGqjw4G8Psxb7bLyldQcsB6XIP2qmSiAEbiqgNTpvOl5GsUTSu6Uuzy00bnkDmmbS'); 
+                            require('dotenv').config();
+                            var stripe = Stripe(process.env.STRIPE_KEY_1); 
                             var orderBtn = document.getElementById('order-btn');
                             orderBtn.addEventListener('click', function () {
                                 stripe.redirectToCheckout({
